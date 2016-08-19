@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Popups;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -25,6 +26,27 @@ namespace SakeAppOsarai2
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private async void button_Click(object sender, RoutedEventArgs e)
+        {
+            var sakeName = textBox.Text;
+            if ( this.textBox.Text != "お酒の名前を入力してね" )
+                {
+                this.listView.Items.Add(sakeName);
+                 } 
+            else
+            {
+                await new MessageDialog("ちゃんと入力してください").ShowAsync();
+            }
+                 
+//      
+//            this.listView.Items.Add(sakeName);
+        }
+
+        private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.listView.Items.Remove(this.listView.SelectedValue); 
         }
     }
 }
