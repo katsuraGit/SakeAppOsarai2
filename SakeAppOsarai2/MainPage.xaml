@@ -8,10 +8,19 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="75" Margin="179,75,0,0" TextWrapping="Wrap" Text="飲んだお酒アプリ" VerticalAlignment="Top" Width="394" FontSize="22"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="109" Margin="179,212,0,0" TextWrapping="Wrap" Text="お酒の名前を入力してね" VerticalAlignment="Top" Width="461"/>
-        <Button x:Name="button" Content="実行" HorizontalAlignment="Left" Height="109" Margin="687,212,0,0" VerticalAlignment="Top" Width="253" Click="button_Click"/>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="175" Margin="179,354,0,0" VerticalAlignment="Top" Width="728" SelectionChanged="listView_SelectionChanged"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="112.667"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" Text="飲んだお酒アプリ" VerticalAlignment="Center" FontSize="24" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="109" Margin="159,25.333,0,0" TextWrapping="Wrap" Text="お酒の名前を入力してね" VerticalAlignment="Top" Width="461" Grid.Row="1"/>
+        <Button x:Name="button" Content="実行" HorizontalAlignment="Left" Height="109" Margin="79,25.333,0,0" VerticalAlignment="Top" Width="253" Click="button_Click" Grid.Row="1" Grid.Column="1"/>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="175" Margin="179,86,0,0" VerticalAlignment="Top" Width="728" SelectionChanged="listView_SelectionChanged" Grid.Row="2" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Page>
